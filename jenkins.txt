@@ -1,0 +1,12 @@
+sudo apt get update
+
+sudo apt install jenkins
+
+sudo systemctl start jenkins.service
+
+#   to run the jenkins outside the virtual machine we need to run below command
+
+sudo firewall-cmd --permanent --zone=public --add-port=8080/tcp
+
+sudo firewall-cmd --reload
+

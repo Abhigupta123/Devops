@@ -1,0 +1,18 @@
+Docker 
+
+1.
+virtualization---
+  it enables us to make virtual version of its physical resources such as storage , computing device, networks.
+ It allows the organization to partiton the single physical resources into multiple virtual machines, and each vm acts as a independenet and can run differnet os.
+
+The main advantage of virtualization is that it enables us to use differnet operating system in a single hardware.
+
+2.
+
+Containerization---
+
+it is a lightweight alternative to virtualization . This involves encapsulating 
+an application in a container with its own operating environment. Thus instead of installing an os for each vm  container uses the host os.
+
+Containerization is "OS-level virtualization". It doesn't simulate the entire physical machine. It just simulates the OS of your machine. Therefore, multiple applications can share the same OS kernel. Containers play similar roles as virtual machine but without hardware virtualization. Most common container technology is "Docker".
+

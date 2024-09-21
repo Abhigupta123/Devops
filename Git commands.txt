@@ -1,0 +1,107 @@
+1.
+git init
+
+2.
+git add .
+
+3.
+git commit -m "my first commit"
+
+4.
+git push ->[ This will push into the repository only if the remote repository is configred, if u not configured any remote repo  then there will not be any effect if u do git push. ]
+
+5.
+[To see git remote repo ] 
+git remote -v
+
+7.
+ [To add remote repo ]
+git remote add (reponame)
+
+9.
+git clone repo_url
+
+10.
+[ To download the code through ssh ]
+ssh-keygen -t rsa
+
+12.
+[go to .ssh  copy the public key , now go to github and add the ssh key from setting ]
+
+13.
+[clone Vs fork ]
+
+14.
+[make new branch]
+git checkout -b branchname
+
+15.
+
+[to see log of the branch ]
+git log branchname
+
+16.
+[to merge branch into main branch ]
+git cherry-pick commitID (it is used when there is one or two commit )
+ 
+17.
+[another command to merge ]
+git merge or git rebase
+
+[git merge ]
+when u use git merge then all the changes will created at top , it always create on the top , not linear
+ 
+[git rebash ]
+when u did git rebase then the changes will be created at the line where u create that branch, it create in linear way
+ 
+
+18.
+
+[git blame filename ] 
+
+To check who did modification at what time
+
+19.
+
+[git log --oneline]
+to show the commit id of commits 
+
+20.
+
+[git reset --hard commitId ]
+in this reset latest commit, and the head is now pointing to prev. commit 
+
+21. 
+[git revert commitID]
+
+22.
+[git remote add origin addressOfGitRepository ]
+
+to add your code to the  git repo
+
+23.
+[git remote -v ]
+
+to check 
+
+24.
+[ssh-keygen ]
+
+To generate the public and private key
+
+25.
+
+[git merge origin/newbranchName ]
+
+to merge your feature branch into main 
+
+26.
+[git checkout -b "newfeaturebranch" ]
+
+To create a new branch
+
+27.
+[git rebase]
+
+through git rebase the commit history remains maintain, but in case of git merge 
+there's a new commit is made and all the commit of new branch is flushed

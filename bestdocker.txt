@@ -1,0 +1,43 @@
+# Use the official Python image as the base image
+FROM python:3.10
+
+# Set the working directory in the container
+WORKDIR /app
+
+# Install wget, unzip, and libnss3
+RUN apt-get update && \
+    apt-get install -y wget unzip libnss3
+
+# Download the Microsoft Edge WebDriver ZIP file
+RUN wget -O msedgedriver.zip https://msedgedriver.azureedge.net/120.0.2210.121/edgedriver_win64.zip
+
+# Extract the ZIP file
+RUN unzip msedgedriver.zip
+
+# Set execute permissions on the extracted executable
+RUN chmod +x msedgedriver
+
+# Move the executable to a directory in the system PATH
+RUN mv msedgedriver /usr/local/bin/
+
+# Clean up by removing the ZIP file
+RUN rm msedgedriver.zip
+
+RUN curl -sSL https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > microsoft.gpg
+RUN mv microsoft.gpg /etc/apt/trusted.gpg.d/microsoft.gpg
+RUN  echo "deb [arch=amd64] https://packages.microsoft.com/repos/edge stable main" > /etc/apt/sources.list.d/microsoft-edge.list
+RUN apt-get update
+RUN apt-get install -y microsoft-edge-dev
+
+# Copy the local directory contents into the container at /app
+COPY . /app
+
+# Install dependencies
+RUN pip install --no-cache-dir -r requirements.txt
+
+# Expose port 5001
+EXPOSE 5001
+
+# Run the application
+CMD ["python", "sanu.py"]
+~                         

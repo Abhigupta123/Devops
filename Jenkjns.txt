@@ -1,0 +1,16 @@
+how to secure the jenkins secrets ?
+
+there are multiple ways to secure the jenkins secrets 
+1> credential plugin
+2> hashicorp vault
+
+####JNLP (Java Network Launch Protocol) in Jenkins refers to a protocol that allows Jenkins agents (also called nodes or slaves) to connect to the Jenkins master for running jobs.
+
+In Jenkins, there are two main ways to set up agents:
+
+SSH agents: These agents connect to the Jenkins master using SSH.
+JNLP agents: These agents connect to the Jenkins master using the JNLP protocol.
+How JNLP works in Jenkins:
+JNLP is typically used when the agent cannot directly connect to the master via SSH, either due to firewalls, network restrictions, or platform differences.
+The Jenkins master generates a .jnlp file, which contains the necessary instructions for an agent to connect back to the master.
+The agent then uses this file to establish a communication link over HTTP(S), which can traverse network boundaries more easily than SSH.

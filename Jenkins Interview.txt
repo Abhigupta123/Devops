@@ -1,0 +1,94 @@
+Jenkins interview questions
+
+1. Which commands can be used to begin Jenkins?
+
+-> java -jar jenkins.war
+
+
+2.
+Continuous deployment ----
+
+Continuous deployment goes one step further than continuous delivery. With this practice, every change that passes all stages of your production pipeline is released to your customers. There's no human intervention, and only a failed test will prevent a new change to be deployed to production.
+
+Continuous Delivery ----
+
+
+Continuous delivery (CD or CDel) prepares deployments for production, allowing development teams to deploy changes easily with the push of a button (typically, the merge to master command, which pushes the deployment to the master branch). 
+
+Continuous delivery produces artifacts deployable to production—the next step after continuous integration (CI). It allows the organization to wait before deploying each new release to evaluate the change.
+
+The main catch in continuous delivery is that a human must still push the button to deploy the release. Companies often set up a CD process without realizing its full benefits, because manual approval takes time and holds up release of new features to customers.
+
+3.
+Differnce between Declarative and scripted pipeline
+
+
+Syntax: The syntax for Scripted Pipeline is based on Groovy scripting language, while the syntax for Declarative Pipeline is also based on Groovy, but it uses a more structured and predefined format.
+
+Flexibility: Scripted Pipeline provides more flexibility and control over the pipeline workflow, while Declarative Pipeline provides a simpler and more structured syntax.
+
+Error handling: Scripted Pipeline allows for more granular error handling and recovery mechanisms, while Declarative Pipeline provides a simpler error handling mechanism that is more intuitive and easier to understand.
+
+Code reuse: Scripted Pipeline allows for more code reuse and modularity, while Declarative Pipeline is designed to be more self-contained and less reliant on external scripts and libraries.
+
+Readability: Declarative Pipeline is designed to be more readable and easier to understand, while Scripted Pipeline can be more complex and verbose.
+
+
+4.
+What Is The Default Path For The Jenkins Password When You Install It?
+
+
+ON windows--
+C:\Program Files (x86)\Jenkins\secrets\initialAdminPassword.
+
+ On Linux/Unix----
+If you installed Jenkins using a package manager like apt or yum, the initial password might not be stored directly on the file system. In this case, you can typically find it in the console output when you start Jenkins for the first time. You’ll see a message that includes the initial password.
+
+
+5.
+Jenkins home directory ?
+
+/var/lib/jenkins
+
+6.
+What Does “Poll SCM” Mean In Jenkins?
+In Jenkins, “poll SCM” means periodically checking a version control system (e.g., Git) for changes. You can schedule how often Jenkins checks for updates. When changes are detected, Jenkins triggers a build, making it a key feature for continuous integration, scheduled tasks, and automated response to code changes.
+
+
+7.  What Is A Jenkins Agent?
+A Jenkins agent, also called a Jenkins slave or node, is a separate machine or resource that collaborates with a Jenkins master to execute jobs and build tasks. Agents enable parallel and distributed builds, scaling Jenkins’ capacity.
+
+They register with the master, get assigned jobs, execute them on their own hardware or VMs, and report back results. Agents can run on various platforms, making it possible to test and build in different environments.
+
+8.  How To Restart Jenkins?
+
+sudo systemctl restart jenkins
+
+9.Types of build triggers in Jenkins include:
+
+SCM Polling Trigger: Monitors source code repositories for changes and triggers builds.
+Scheduled Build Trigger: Runs jobs on a predefined schedule using cron-like syntax.
+Webhook Trigger: Listens for external events or notifications to start builds.
+Upstream/Downstream Trigger: Triggers downstream jobs based on the success of upstream jobs, creating build pipelines.
+Manual Build Trigger: Requires manual user intervention to start a job.
+Dependency Build Trigger: Triggers jobs when another job is completed, regardless of success or failure.
+Parameterized Trigger: Passes parameters from one job to another during triggering.
+Pipeline Trigger: Allows custom triggering logic within Jenkins
+
+10.
+What is the language used to write the Jenkins CI/CD pipeline?
+Jenkins CI/CD pipelines are typically written using a domain-specific language called Groovy. 
+
+11.
+What is the difference between Continuous Delivery and Continuous Deployment?
+Continuous Delivery--
+
+In Continuous Delivery, the deployment to the production environment is not automated. Instead, it requires a manual trigger or approval process. The code is considered “production-ready” and can be deployed to the live environment, but this step is not automated.
+
+Continuous Deployment--
+
+Continuous Deployment is an extension of Continuous Delivery. It is a practice where code changes that pass automated tests are automatically and immediately deployed to the production environment without requiring manual intervention or approval.
+
+
+
+

@@ -1,0 +1,67 @@
+1> Key Differences between Git Merge and Git Rebash
+
+Merge: Creates a new commit to combine two branches, keeps both branch histories intact.
+Rebase: Moves the commits from one branch on top of another, creating a single, linear history without extra commits.
+
+2>  what is difference between Git fetch and Git pull ?
+
+Git fetch- In this it only downloads updates (new commits, branches, tags)
+           from the remote repository but doesn’t modify your working directory or merge any changes into your current branch.
+           It’s like checking for updates without applying them. You can see what changes are available 
+            in the remote repository and decide when to integrate them.
+
+Git pull- Git pull is basically the combination of both git fetch and git merge, that means it downloads the updates from remote repo
+          and also applies it to your working branch.
+
+3> What is Git stash ?
+
+   git stash is a useful command in Git that allows you to temporarily save your changes without committing them,
+   Imagine you're working on a feature, but suddenly need to fix a bug on a different branch. You haven’t finished
+   your work or don’t want to commit it yet. You can stash your current work, switch branches to fix the bug, 
+   and then come back and reapply your stashed changes.	
+  $ git stash 
+  $ git stash apply  # It reapplies the most recent stash in your working directory and keeps the stash in stack
+  $ git stash pop    # It reapplies the most recent stash in your working directory and removes it from the stack
+
+4> Git Branching Strategy
+
+   A Git branching strategy is a way to organize and manage branches in a Git repository for efficient development and collaboration.
+   
+   Main (or Master): This branch holds the production-ready code. It should always be stable and contain only tested and working code.
+
+   Develop: This is the branch where ongoing development happens. All features, bug fixes, and improvements are integrated here before being tested and released to             production.
+
+   Feature Branches: New features are developed on separate branches created from develop. Once the feature is complete and tested, it is merged back into develop.
+
+
+   Release Branches: When you're ready to prepare a new release, you create a release branch from develop. This allows for final testing, bug fixing, and minor                      changes.
+
+   Hotfix Branches: Hotfixes are for critical issues that need to be fixed immediately on the main branch. Once fixed, they are merged back into both main and develop                     to keep the codebase in sync.
+
+
+5> What is a Merge Conflict in Git?
+
+	A merge conflict occurs when Git is unable to automatically merge changes from different branches. 
+	This usually happens when two people (or two branches) make changes to the same lines of code or files, and Git can’t determine which changes should be 		kept.
+	
+	When a conflict occurs, Git pauses the merge process and marks the file(s) with conflict markers to highlight the conflicting sections.
+	Open the Conflicted Files: Open the files marked by Git (those with conflict markers like <<<<<<< and >>>>>>>).
+	 You will see the conflicting sections with the conflict markers.
+
+	Manually Resolve the Conflict:
+
+	Decide which changes to keep. You can:
+	Keep your changes.
+	Keep the changes from the other branch.
+	Combine both sets of changes.
+	Remove the conflict markers (<<<<<<<, =======, and >>>>>>>) after you’ve resolved the conflicts.
+	
+	Mark the Conflict as Resolved.
+	git mergetool: Git has a built-in command that allows you to resolve conflicts using merge tools like KDiff3 or Meld.
+
+	Best Practices to Avoid Merge Conflicts:
+
+ 	Pull frequently: Regularly pull changes from the remote repository to avoid large merge conflicts later.
+	Communicate with your team: Coordinate with other developers if you’re working on the same files to avoid overlap.
+	Use small, frequent commits: This minimizes the chance of conflicts.
+	Resolve conflicts early: If you notice a conflict during a merge, resolve it immediately to prevent further issues.
