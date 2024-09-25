@@ -1,0 +1,12 @@
+workflow of perforce
+
+Configure or set up workspace: p4 client
+Pull the latest code from the depot: p4 sync
+Open files for edit: p4 edit file.txt   // it is known as checkout
+Modify the files in your editor. If u want to add new file use p4 add
+Review changes: p4 diff file.txt
+Revert unwanted changes (optional): p4 revert file.txt
+Shelve changes (optional): p4 shelve
+Submit (push) changes: p4 submit     // it is known as checkin
+Verify the submission: p4 filelog file.txt
+Lock files (optional): p4 lock file.txt

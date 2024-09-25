@@ -1,0 +1,17 @@
+ React.js
+Type: Frontend JavaScript library.
+Usage: React.js is used for building user interfaces (UIs), especially for single-page applications (SPAs).
+
+
+Type: JavaScript runtime environment.
+Usage: Node.js allows you to run JavaScript code on the server-side, outside the browser, enabling JavaScript to be used for backend development.
+
+
+
+ Express.js
+Type: Backend web framework for Node.js.
+Usage: Express.js is a minimal and flexible web application framework for Node.js, providing tools to build web servers and APIs.
+
+jQuery
+Type: JavaScript library.
+Usage: jQuery is used to simplify DOM manipulation, handle events, and make AJAX requests. It provides an easier interface to handle tasks that were once cumbersome in plain JavaScript.

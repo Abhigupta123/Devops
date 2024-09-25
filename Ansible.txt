@@ -1,0 +1,67 @@
+1>  Ansible is an open-source automation tool that is widely used for configuration management, application deployment, and orchestration.
+
+Configuration Management:
+
+Ansible helps in maintaining and configuring servers and applications. It ensures that the desired state of your infrastructure is achieved and maintained over time.
+You can manage configurations for operating systems, network devices, and applications across various environments (development, staging, production).
+
+Application Deployment:
+
+Ansible automates the deployment of applications to multiple servers. It can manage dependencies, perform software installation, and set up configurations, ensuring that deployments are consistent and repeatable.
+
+Orchestration:
+
+Ansible can orchestrate complex multi-tier deployments where multiple components need to be coordinated. This includes starting and stopping services, managing workflows, and integrating with other systems.
+
+Task Automation:
+
+Ansible can automate repetitive tasks and workflows, such as backups, system updates, and monitoring tasks, reducing manual effort and human error.
+
+Configuration Management refers to the process of maintaining the settings, options, and versions of software and hardware components in a system over time. It ensures that the desired state of the system is consistently applied and maintained.
+
+
+
+2> Agentless: Ansible does not require any agent installation on the managed nodes. It communicates with the nodes in the network using SSH simplifying deployment and reduces complexity.
+Declarative Language: Ansible uses a simple human-readable YAML syntax to specify the desired state of the system making it easy to write and understand automation scripts.
+Idempotent Operations: Ansible ensures for the achievement of desired state i.e., running a playbook multiple times has the same effect as running it once. This prevents from unintended changes ensuring consistency.
+Playbooks: Automation scripts in Ansible are known as playbooks. Playbooks are written in YAML by defining a set of tasks that to be executed on remotely specifying in the hosts section.
+
+3>
+What are handlers in Ansible, and how are they used in playbooks?
+Handlers in Ansible are tasks that are triggered by other tasks, usually used to respond for the changes that require start , stop , reload or restart the service actions. They are defined in the playbook and executed as per need.
+
+Define Handlers: Handlers are defined using the handlers section at the end of the playbook or within the relevant roles.
+
+Notify Handlers: Use the notify keyword in a task to inform a handler that it should run if the task results in a change.
+
+4>
+
+Ansible roles are a way to organize and encapsulate Ansible playbooks and related files into reusable components. They help in structuring your Ansible project to promote modularity, reuse, and maintainability. Roles allow you to define configurations, tasks, variables, files, templates, and handlers that can be easily reused across different playbooks.
+
+
+#######################Structure of Ansible playbook #########################3
+---
+- name: Example Playbook with Handlers
+  hosts: webservers
+  tasks:
+    - name: Install nginx
+      apt:
+        name: nginx
+        state: present
+      notify: Restart nginx  # Notify the handler if nginx is installed or changed
+
+    - name: Update nginx configuration
+      copy:
+        src: /path/to/local/nginx.conf
+        dest: /etc/nginx/nginx.conf
+      notify: Restart nginx  # Notify the handler if the configuration is updated
+
+  handlers:
+    - name: Restart nginx
+      service:
+        name: nginx
+        state: restarted
+
+#################################################################
+
+Inventory file default path   /etc/ansible/hosts

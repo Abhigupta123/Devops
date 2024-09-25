@@ -29,7 +29,7 @@ Git pull- Git pull is basically the combination of both git fetch and git merge,
    
    Main (or Master): This branch holds the production-ready code. It should always be stable and contain only tested and working code.
 
-   Develop: This is the branch where ongoing development happens. All features, bug fixes, and improvements are integrated here before being tested and released to             production.
+   Develop: This is the branch where ongoing development happens. All features, bug fixes, and improvements are integrated here before being tested and released to production.
 
    Feature Branches: New features are developed on separate branches created from develop. Once the feature is complete and tested, it is merged back into develop.
 
@@ -57,6 +57,7 @@ Git pull- Git pull is basically the combination of both git fetch and git merge,
 	Remove the conflict markers (<<<<<<<, =======, and >>>>>>>) after you’ve resolved the conflicts.
 	
 	Mark the Conflict as Resolved.
+
 	git mergetool: Git has a built-in command that allows you to resolve conflicts using merge tools like KDiff3 or Meld.
 
 	Best Practices to Avoid Merge Conflicts:

@@ -1,0 +1,1 @@
+RBAC (Role-Based Access Control) in Jenkins is a security feature that allows you to manage user permissions based on their roles. Instead of assigning permissions to individual users, RBAC lets you create roles with specific sets of permissions, and then assign those roles to users or groups. This helps in efficiently managing and scaling permissions, especially in large teams.

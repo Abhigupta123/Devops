@@ -1,7 +1,7 @@
 how to secure the jenkins secrets ?
 
 there are multiple ways to secure the jenkins secrets 
-1> credential plugin
+1> credential plugin ---Secrets are accessed in jobs by referencing credential IDs, without exposing them in job configurations or build logs.
 2> hashicorp vault
 
 ####JNLP (Java Network Launch Protocol) in Jenkins refers to a protocol that allows Jenkins agents (also called nodes or slaves) to connect to the Jenkins master for running jobs.
